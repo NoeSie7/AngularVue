@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="curso de vue2">
+    <meta name="author" content="">
+    <link rel="icon" href="#">
+
+    <title>Curso de Vue2</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"> </script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script> -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+    <div id="app" class="container">
+        {{$data}}
+        <h4>Has trabajdo con Vue.js?</h4>
+        <div class="radio">
+            <label class="radio-inline">
+                <input type="radio" v-model="vue.exp" :value="true">Sí
+                <!--Vmodel Para enlazar con mi js la variable (: es lo mismo que v-bind:)-->
+            </label>
+            <label class="radio-inline">
+                <input type="radio" v-model="vue.exp" value="0" v-bind:value="false">No
+            </label>
+        </div>
+
+        <!--Si la respuesta es si-->
+        <div v-if="vue.exp">
+            <div v-if="vue.exp" class="form-group">
+                <label for="vue_years">¿Cuantos años de experiencia tienes con Vue?</label>
+                <input type="number" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="vue_years">Que te motivo a aprender Vue.js?</label>
+                <textarea v-model="vue.description" class="form-control" name="" id="" cols="30" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="vue_years">Cuentanos tu experiencia con Vue.js</label>
+                <textarea v-model="vue.description" class="form-control" name="" id="" cols="30" rows="4"></textarea>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="welcome">
+            <h1 v-text="this.name">
+                Bienvenido {{name.toUpperCase()}}
+                {{reversedName}}
+            </h1>
+            <h2 v-text="this. name + ':' + reversedName">
+
+            </h2>
+            <h3 v-once> <!--Lo muestra como constante-->
+        <!--
+                {{project}}
+            </h3>
+        </div> -->
+        <footer class="footer">
+            <p>
+                &copy; 2018 Representando
+            </p>
+        </footer>
+    </div>
+
+
+
+
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                vue: {
+                    exp: null,
+                    years: 0,
+                    description: 'descripcion'
+                },
+                name: '',
+                team: false,
+                project: 'Styde'
+            },
+            computed: {
+                reversedName: function () {
+                    return this.name.split('').reverse().join('');
+                }
+            }
+        });
+
+        vm.name = 'Noé';
+    </script>
+</body>
+
+</html>

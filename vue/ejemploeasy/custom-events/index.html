@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+    <!-- ANIMATED.CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+        <main id="app">
+            
+            <button @click="mostrarExito = true">Exito</button>
+            <button @click="mostrarError = true">Error</button>
+            <button @click="mostrarAdvertencia = true">Advertencia</button>
+
+            <alerta @ocultar="mostrarExito=false" v-show="mostrarExito" tipo="alerta--exito" posicion="alerta--abajo-derecha">
+                <template slot="header">
+                    Todo Ok :)
+                </template>
+                <template>Este es el nuevo contenido del alert :)</template>
+                <template slot="footer">
+                    Puedes Continuar con normalidad
+                </template>
+            </alerta>
+
+            <alerta @ocultar="mostrarError=false" v-show="mostrarError" tipo="alerta--error" posicion="alerta--arriba-derecha">
+                    <template slot="header">
+                        Error fatal :)
+                    </template>
+                    <template>El mundo esta a punto de implosionar</template>
+                    <template slot="footer">
+                        RIP
+                    </template>
+            </alerta>
+
+            <alerta @ocultar="mostrarAdvertencia=false" v-show="mostrarAdvertencia" tipo="alerta--advertencia" posicion="alerta--abajo-izquierda">
+                    <template slot="header">
+                        Atención
+                    </template>
+                    <template>El mundo esta a punto de implosionar</template>
+                    <template slot="footer">
+                        RIP
+                    </template>
+            </alerta>
+
+
+            <listado-productos :productos="productos"> </listado-productos>
+            <carrito-compra></carrito-compra>
+            <hr>
+            <pre>
+                    ################################ $DATA ###########################################
+                                {{$data}}
+                    ###########################################################################
+            </pre>
+    
+        </main>
+    
+  
+    
+        
+        
+    
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"> </script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="js/main.js"></script>
+       
+    
+    </body>
+    
+    </html>

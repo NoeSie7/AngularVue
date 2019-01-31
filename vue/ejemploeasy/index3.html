@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <!-- ANIMATED.CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <main id="app">
+
+        <button @click="mostrar = !mostrar">Mostrar/Ocultar</button>
+
+        <!-- Transition -->
+
+        <!-- <transition name="aparecer" appear>
+            <h1 v-if="mostrar" v-text="mensajes.transicion"></h1>
+        </transition> -->
+
+        <!-- Animation -->
+        
+        <!-- <transition name="bote">
+            <h1 v-if="mostrar" v-text="mensajes.animacion"></h1>
+        </transition> -->
+
+        <!-- Animated.css -->
+        
+        <!-- <transition name="animated.css" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+            <h1 v-if="mostrar" v-text="mensajes.animationCustom"></h1>
+        </transition> -->
+
+        <!-- Transicion entre diferentes elementos -->
+        
+        <!-- <transition name="aparecer">
+            <h1 v-if="mostrar" v-text="mensajes.entreElementos" key="aparecer" mode="in-out"></h1>
+            <h1 v-else key="ocultarse"> No hay mensajes</h1>
+        </transition> -->
+
+
+
+        <!-- VUE Resource -->
+
+        <!-- <img 
+            v-for="persona in personas" 
+            :src="persona.picture.thumbnail" 
+            :alt="persona.name.first"> -->
+
+
+        <!-- AXIOS -->
+            <img 
+            v-for="persona in personas"
+            :src="persona.picture.thumbnail"
+            :alt="persona.name.first">
+
+
+
+        <pre>
+################################ $DATA ###########################################
+                {{$data}}
+###########################################################################
+        </pre>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main1.js"></script>
+   
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<body>
+    <main id="app">
+       
+        <candidato v-for=" candidato in candidatos"
+                    :nombre="candidato.name.first"
+                    :correo="candidato.email"
+                    :imagen="candidato.picture.thumbnail"
+                    :location ="candidato.location">
+
+        </candidato>
+        
+        <pre>
+                ################################ $DATA ###########################################
+                            {{$data}}
+                ###########################################################################
+        </pre>
+
+    </main>
+
+    <template id="candidato-template">
+        <blockquote>
+            <img :src="imagen" align="right">
+            <h1>{{nombre}}</h1>
+            <h2>{{correo}}</h2>
+            <ul>
+                <li v-for="(value, key, index) in location">
+                    {{value}}</li>
+            </ul>
+            <hr>
+        </blockquote>
+        
+    </template>
+
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+   
+
+</body>
+
+</html>

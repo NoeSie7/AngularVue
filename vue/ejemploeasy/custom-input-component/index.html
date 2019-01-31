@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" href="./css/style.css" type="text/css"> -->
+    <!-- ANIMATED.CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <main id="app">
+        
+        <!-- <input type="text" v-model="contrasena"> -->
+        <!-- <input type="text" :value="contrasena" @input="contrasena = $event.target.value"> -->
+        <!-- <contrasenia :password="contrasena"></contrasenia> -->
+        <contrasenia v-model="contrasena" :contrasena="contrasena"></contrasenia>
+        <pre>
+    ################################ $DATA ###########################################
+                {{$data}}
+    ###########################################################################
+        </pre>
+    </div> 
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+   
+
+</body>
+
+</html>

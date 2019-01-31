@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+
+<body>
+    <main id="app">
+        <!-- <h1>{{mensaje}}</h1>
+            <h2 v-show="conectado">Estoy conectado</h2>
+            <input type="text" v-model="mensaje">
+
+            <h3 v-if="conectado">Estoy conectado 1</h3>
+            <h4 v-if="edad < 18"> No puedes entrar</h4>
+            <h4 v-else-if=" edad > 200">Eres en inmortal</h4>
+            <h4 v-else>Puedes entrar</h4>
+            
+            <template v-if="conectado">
+                <h3> Bienvenido Juan</h3>
+                <ul>
+                    <li>
+                        <a href="#">Mis datos</a>
+                        <a href="#">Mensajes</a>
+                        <a href="#">Sal</a>
+                    </li>
+                </ul>
+            </template>
+            <h4 v-else>No estas conectado</h4> -->
+
+
+        <!--RENDERIZADO DE LISTAS-->
+        <!-- <ul>
+                <li v-for="dia in laborales">
+                    {{dia}}
+                </li>
+            </ul>
+
+            <ul>
+                    <li v-for="(det,key,index) in persona">
+    
+                        {{index}} -
+                        {{key}} :
+                        {{det}}
+                    </li>
+                </ul> -->
+
+        <!-- <ul>
+                <li v-for="tarea,index in tareas">
+                     {{index}} - {{tarea.nombre}} <small> ({{tarea.prioridad}})</small>
+                </li>
+            </ul> -->
+
+        <!-- <h1>{{reversedName}}</h1>
+            <h2>{{mensaje}}</h2>
+        <ul>
+            <li v-if="works.prioridad" v-for="tarea, index in tarea1">
+                {{index}} - {{tarea}}
+            </li>
+        </ul>
+
+        <form  v-on:submit.prevent="agregarTarea">
+            <input type="text" placeholder="Introduce tu tarea" v-model="nuevaTarea">
+            <input type="submit" value="Enviar tarea">
+        </form> -->
+
+        <!-- <h1>{{reversedName}}</h1>
+        <h2>{{mensaje}}</h2>
+    <ul>
+        <li  v-for="tarea, index in tareasPorAntiguedad">
+         <!-- {{tarea[index].titulo}} -5->
+        <!-- {{tarea.titulo}}
+        </li>
+    </ul>
+
+    <form  v-on:submit.prevent="agregarTarea">
+        <input type="text" placeholder="Introduce tu tarea" v-model="nuevaTarea">
+        <input type="submit" value="Enviar tarea">
+    </form> -->
+
+        <!-- <input type="search" v-model="busqueda" placeholder="Buscar juego">
+    <ul>
+        <li v-for=" juego in buscarJuego">
+            {{ juego.titulo }}
+        </li>
+    </ul>
+
+    <input type="range" min="0" max="10" v-model="minimo"> -->
+
+        <h1>Tareas</h1>
+        <h2>{{tareasCompletadas.length}} completadas</h2>
+        <ul>
+            <li :class="{ completado: tarea.prioridad }" @click="completarTarea(tarea)" v-for=" tarea in tareas">
+                {{tarea.nombre}}
+            </li>
+        </ul>
+
+        <pre>
+################################ $DATA ###########################################
+                {{$data}}
+###########################################################################
+            </pre>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"> </script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

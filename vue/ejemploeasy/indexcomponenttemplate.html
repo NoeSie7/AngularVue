@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <!-- ANIMATED.CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <main id="app">
+       
+        <!-- <elegir-ganador :listado="personas"></elegir-ganador> -->
+
+        <template id="elegir-ganador-template" inline-template>
+            <div>
+                <h1 v-if="ganador">El ganador es: {{ganador}}</h1>
+                <template v-else>
+                    <h1>Participantes</h1>
+                    <ul>
+                        <li v-for=" persona in listado">{{persona}}</li>
+                    </ul>
+                </template>
+                <button v-on:click="elegirGanador()">Elegir Ganador</button>
+            </div>
+        </template>
+
+    <div>      
+        <pre>
+    ################################ $DATA ###########################################
+                {{$data}}
+    ###########################################################################
+        </pre>
+    </div> 
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/maincomponenttemplate.js"></script>
+   
+
+</body>
+
+</html>

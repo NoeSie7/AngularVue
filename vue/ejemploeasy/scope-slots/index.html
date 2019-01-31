@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="./css/main.css" type="text/css"> -->
+    <!-- ANIMATED.CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+        <main id="app">
+            
+            <mis-tareas :listado="tareas">
+                <template slot="tarea1" slot-scope="datos"><!--Variable temporal-->
+                    <li><h1> {{ datos.titulo_temporal }} </h1></li>
+                </template>
+            </mis-tareas>
+
+            <mis-tareas :listado="tareas">
+                    <template slot="tarea1" slot-scope="datos"><!--Variable temporal-->
+                        <li> {{ datos.titulo_temporal }} </li>
+                    </template>
+            </mis-tareas>
+
+            <mis-tareas :listado="tareas">
+                    <template  slot="tarea1" slot-scope="datos"><!--Variable temporal-->
+                        <li> 🍔{{ datos.titulo_temporal }} </li>
+                    </template>
+            </mis-tareas>
+
+
+            <pre>
+                    ################################ $DATA ###########################################
+                                {{$data}}
+                    ###########################################################################
+            </pre>
+    
+            <template id="mis-tareas-template"> 
+                <ul>
+                    <slot name="tarea1" v-for="tarea in listado" :titulo_temporal="tarea.titulo">
+
+                    </slot>
+                    <!-- <li v-for="tarea in listado">
+                        {{tarea.titulo}}
+                    </li> -->
+                </ul>
+            </template>
+
+        </main>
+    
+  
+    
+        
+        
+    
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"> </script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="js/main.js"></script>
+       
+    
+    </body>
+    
+    </html>
